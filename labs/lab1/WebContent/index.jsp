@@ -42,18 +42,35 @@
   Edit index.jsp (under WebContent) and enter your answers in the "div" tags.
 	<!-- put your answer inside the div tag below -->
 	<div class="answer getpost">
+	<p>
+	The link is using the GET Http method, while the button is using the POST method. <br>
+	The servlet is handling them similarly except for the HTTP methods being used.  The first <br>
+	example being that it is a link is probably static as you are retrieving information, while <br>
+	the button, used as like a submit, is sending data to the servlet.</p>
 	</div>
 </div>
 
 <div class="methods">
 	<p class="question methods">Explain the GET and POST HTTP methods:  
 	What is the meaning behind it?  
-	When is it used?  
+	When is it used?
 	What types of actions lead to a GET or POST.  
-	Name and briefly describe two other HTTP methods.</p>
+	Name and briefly describe two other HTTP methods.
+	</p>
 	
 	<!-- put your answer inside the div tag below -->
 	<div class="answer methods">
+	<ol>
+		<li>GET is used for retrieving data <br>
+			POST is used for sending data</li>
+		<li>GET is used with Links <br>
+			POST is used with Forms </li>
+		<li>GET, action = click a link <br>
+			POST, action = submit a form</li>
+		<li>PUT and HEAD <br>
+			PUT is creating or replacing a resource at a designated URI <br>
+			HEAD is identical to GET except that the server must not return a message-body in the response</li>
+	</ol>
 	</div>
 </div>
 
@@ -64,6 +81,17 @@
 	
 	<!-- put your answer inside the div tag below -->
 	<div class="answer methods">
+	 <ul>
+		<li>200: meaning = request was successful and the server was able to deliver.
+		     Used to denote success
+		     </li>
+		<li>404: meaning = client error, requested URI does not exist on the server.
+		     Used to denote that the request sent isn't good anymore
+		     </li>
+		<li>500: meaning = server error, request could not be processed.
+		     Used to denote a problem with the server. 
+		     </li>
+	 </ul>
 	</div>
 </div>
 
@@ -119,6 +147,13 @@
 	
 	<!-- put your answer inside the div tag below -->
 	<div class="answer accessParams">
+	There are 3 methods used for retrieving parameters from request:
+		<ol>
+			<li>String getParameter()</li>
+			<li>String[] getParameterValues()</li>
+			<li>Enumeration getParameterNames()</li>
+		</ol>
+		</ol>
 	</div>
 
 	
@@ -126,36 +161,68 @@
 	
 	<!-- put your answer inside the div tag below -->
 	<div class="answer direction">
+	<p>
+	<ol>
+		<li>sendRedirect()</li>
+		<li>Servlet.service</li>
+		<li>RequestDispatcher interface which includes a forward method</li>
+	</ol>
+		
+	</p>
 	</div>
 	
 	<p class="question init">What is the init() method used for?  What might you do in there?  Who calls it and when?  Same for destroy()</p>
 	
 	<!-- put your answer inside the div tag below -->
 	<div class="answer init">
+	<ul>
+		<li>init() is used for servlet initialization.</li>
+		<li>init() creates or loads objects that are used by the servlet in the handling of its requests.</li>  
+		<li>init() is invoked when the servlet is loaded.</li> 
+		<li>init() best used for resource heavy one-time operations.</li>
+		<li>destroy() releases any resources the servlet is using.</li>
+		<li>destroy() will also save any persistent state</li>
+	</ul>
 	</div>
 	
 	<p class="question binary">What method would we call if we wanted to send binary data back to the user (for example an image)</p>
 	
 	<!-- put your answer inside the div tag below -->
 	<div class="answer binary">
+	<p>
+	 ServletResponse.getOutputStream();
+	 OutputStream.write(bytes);
+	</p>
 	</div>
-	
+
 	<p class="question header">What methods might we call if we wanted to add or set a header?  Why would we want to set a header?</p>
 	
 	<!-- put your answer inside the div tag below -->
 	<div class="answer header">
+	<p>
+		HttpServletResponse.setHeader("name", "value");
+	</p>
 	</div>
 
 	<p class="question header">What are three scopes (or containers) for request attributes?  Explain their usage.</p>
 	
 	<!-- put your answer inside the div tag below -->
 	<div class="answer header">
+		<ol>
+		<li>Servlet-Request object</li>
+		<li>HttpSession object</li>
+		<li>ServletContext object</li>
+	</ol>
 	</div>
 	
 	<p class="question paramsVattributes">What is the difference between request parameters and attributes?</p>
 	
 	<!-- put your answer inside the div tag below -->
 	<div class="answer paramsVattributes">
+	<p>
+	Parameter is the result of a form or query submission <br>
+	Attribute is data stored in a value object, like a name - value pair
+	</p>
 	</div>
 </div>
 

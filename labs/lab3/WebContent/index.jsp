@@ -30,25 +30,27 @@
 	<li>/index.jsp</li>
 	<li>/META-INF
 		<ul>
-			<li>/????</li>
+			<li>MANIFEST.MF</li>
 		</ul>
 	</li>
 	<li>/WEB-INF
 		<ul>
-			<li>/????</li>
-			<li>/????
+			<li>banner.jsp</li>
+			<li>footer.html</li>
+			<li>private.jsp</li>
+			<li>web.xml</li>
+			<li>classes
 				<ul>
-					<li>/????</li>
+					<li>lab3</li>
 				</ul>
 			</li>
-			<li>/????
+			<li>lib
 				<ul>
-					<li>/????</li>
+					<li>log4j-1.2.16.jar</li>
 				</ul>
 			</li>
 		</ul>
-	</li>
-	
+	</li>	
 </ul>
 </div>
 

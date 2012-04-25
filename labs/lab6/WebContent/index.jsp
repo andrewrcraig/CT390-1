@@ -48,7 +48,9 @@ Think about that for a little then click the submit button below</p>
 
 <p>What happens and why?</p>
 <div class="answer">
-
+upon clicking submit, lily is passed to our first.jsp page in session attribute and displays as Hello lily<br>
+or whatever string you place in the field<br>
+b/c <b>jspService</b> handles all Http Method calls
 </div>
 
 <h2>Sessions</h2>
@@ -60,12 +62,12 @@ Fix it then visit it, it should print out the value you stored in the session.</
 <span class="hint">Look at the directives on that page.</span>
 <p>How did you fix it?</p>
 <div class="answer">
-
+<p>because page session is set to 'false'.  To fix set to 'true'.</p>
 </div>
 
 <p>At what point in the JSPs life cycle did this error happen?</p>
 <div class="answer">
-
+Translation phase
 </div>
 
 <h2>Another error</h2>
@@ -73,9 +75,8 @@ Fix it then visit it, it should print out the value you stored in the session.</
 At what point in the JSP lifecycle is this error happening?</p>
 
 <p class="hint">this isn't a compiler error.  look at the stacktrace</p>
-
 <div class="answer">
-
+I believe the error is happening at jspInit() phase 
 </div>
 
 </body>
