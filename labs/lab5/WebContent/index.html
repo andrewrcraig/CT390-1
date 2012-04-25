@@ -30,33 +30,39 @@ JSPs are "inside-out" servlets, that is, they are HTML that can have java code e
 <div class="examples">
 <p>Paste an example of a directive from example.jsp here.  <strong>leave off the angle brackets, that is &lt;<span style="color:red">copy the part between the angle brackets</span>&gt; so that it shows up here</strong></p>
 <div class="answer directives">
-
+%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%
 </div>
 
 <p>Paste an example of a declaration from example.jsp here</p>
 <div class="answer declaration">
-
+%! int visitorCounter = 0; %
 </div>
 
 <p>Paste an example of a scriptlet from example.jsp here</p>
 <div class="answer scriptlet">
-
+% //doesn't this look familiar?  request.getParameter can be called from a JSP too!
+String statement = request.getParameter("say");
+if (statement == null) {
+	statement = "";
+}
+%
 </div>
 
 <p>Paste an example of a expression from example.jsp here</p>
 <div class="answer expression">
-
+% int altCounter = 0; %
 </div>
 
 <p>Paste an example of a jsp comment from example.jsp here</p>
 <div class="answer comment">
-
+% //this also works as a comment, it's a JAVA comment though %
 </div>
 
 
 <p>Paste an example of a jsp action from example.jsp here</p>
 <div class="answer action">
-
+jsp:include page="/WEB-INF/footer.jsp"></jsp:include
 </div>
 </div>
 
@@ -64,36 +70,58 @@ JSPs are "inside-out" servlets, that is, they are HTML that can have java code e
 
 <p>What is the difference between the different comment types?  <span class="hint">Who can see them and when?</span></p>
 <div class="answer">
-
+<ul>
+<li>html</li>
+<li>jsp</li>
+<li>java</li>
+jsp and java comments are stripped out by the jsp engine and cannot be seen through view source in the browser.<br>
+html comments are read as html and persist throughout.
+</ul>
 </div>
 
 <p>What happens for visitor numbers 5 and up? <span class="hint">If you want to reset the counter you can restart the server</span></p>
 <div class="answer">
-
+they are given a message of 'Wow, this site is getting popular!'
 </div>
 
 <p>Both visitorCounter and altCounter are initialized to 0.  Both are incremented.  
 Why does altCounter not keep counting up but visitorCounter does? 
 <span class="hint">Carefully review the differences in the tags.</span></p>
 <div class="answer">
-
+initialization of altCounter is not done in declarative tags so lifespan is shorter.  It only runs once; when the jsp is initialized. 
 </div>
 
 <p>Name and explain the JSP page life-cycle phases
 <span class="hint">don't copy and paste, it's important to understand these and almost guaranteed to be on the test</span></p>
 <div class="answer">
-
+<ul>
+	<li>Page translation:  jsp --> servlet</li>
+	<li>Compile</li>
+	<li>Load class</li>
+	<li>Create instance</li>
+	<li>initialize</li>
+	<li>Execute</li>
+	<li>Cleanup</li>
+</ul>
+Essentially, the jsp page is parsed into a servlet, compiled, then an instance of the servlet is created once, or again if it has been modified.  Once compiled, it is initialized by invoking the init() method.  <br>
+Then in execution the jsp invokes the jspService() method, which takes the HttpServletRequest/Response methods as its parameters.  This method is called once per request and is also responsible for the response.  <br>
+The cleanup removes the jsp from the container by invoking the jspDestroy() method.  This cleans up any open files or will close open DB connections
 </div>
 
 <p>This link goes to <a href="example.jsp?say=JSPs can get parameters too!">example.jsp with a parameter</a>.
 What is the message?  Find the code on example.jsp that is responsible for this.  It should look familiar to our servlet code.</p>
 <div class="answer">
-
+% //doesn't this look familiar?  request.getParameter can be called from a JSP too!
+String statement = request.getParameter("say");
+if (statement == null) {
+	statement = "";
+}
+%
 </div>
 
 <p>If we want to access session information what directive would we need to add to our jsp page?</p>
 <div class="answer">
-
+%@ session = true %
 </div>
 
 </body>
