@@ -70,7 +70,7 @@ Fix it then visit it, it should print out the value you stored in the session.</
 
 <p>At what point in the JSPs life cycle did this error happen?</p>
 <div class="answer">
-Translation phase
+Compilation
 </div>
 
 <h2>Another error</h2>
@@ -79,7 +79,7 @@ At what point in the JSP lifecycle is this error happening?</p>
 
 <p class="hint">this isn't a compiler error.  look at the stacktrace</p>
 <div class="answer">
-I believe the error is happening at jspInit() phase 
+jspService() 
 </div>
 
 </body>
