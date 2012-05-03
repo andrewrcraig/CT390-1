@@ -11,10 +11,11 @@
 
 <h1>Who just got done lab8?</h1>
 
-<jsp:useBean id="user" class="lab8.UserBean" scope="session"/>
+<jsp:useBean id="user" class="lab8.UserBean"/>
 
 <marquee>
 <h1 style="font-size: 300%; color: blue;">
+
 <%= user.getFullName() %>
 </h1>
 </marquee>

@@ -31,15 +31,19 @@
 <p class="hint">Hint's show up like this</p>
 
 <t2:prompt prompt="Why do we use tags?" answer="
-YOUR ANSWER GOES HERE
+tags are used in JSPs in order to separate the java code from the jsp pages, separating presentation<br>
+logic, making for cleaner code and easier maintenance. The tag libraries contain custom tags which gives<br>
+the dev better access to the framework, or add in other frameworks to access.  These libraries can be<br>
+used as per your need and you can even create your own custom tags
 " heading="" 
 hint="Hint: DRY.  This lab uses tags for the prompt and answer.  
 Put your inside the tag attribute called 'answer'.  
 Don't use double quotes in your answer.  But it can span multiple lines."/>
 
-<t2:prompt prompt="How many tag libraries are we declaring in index.jsp?" answer="" heading="Tag Libraries" hint="look at the top of the file"></t2:prompt>
+<t2:prompt prompt="How many tag libraries are we declaring in index.jsp?" answer="3" heading="Tag Libraries" hint="look at the top of the file"></t2:prompt>
 
-<t2:prompt prompt="What files provide for (are needed in order to use) the 'substring' tag?  See the substring tag in use below" answer="" heading="Java Tags" hint="look at the top of this file for the uri attribute, then look in that file for the tagclass."></t2:prompt>
+<t2:prompt prompt="What files provide for (are needed in order to use) the 'substring' tag?  See the substring tag in use below"
+answer="SubstrDescriptor.tld | SubstrTagHandler.java" heading="Java Tags" hint="look at the top of this file for the uri attribute, then look in that file for the tagclass."></t2:prompt>
 
 <t1:substring input="GOODMORNING" start="1" end="6"/> 
 
@@ -69,11 +73,13 @@ Here is an example of looping:
 
 <p class="hint">Use prompt.tag as an example</p>
 
-<%--
+
 <t2:greeter name="Anna" color="blue"/>
 
 <t2:greeter color="blue"/>
- --%>
+
+<t2:greeter.tag 
+
 
 
 
