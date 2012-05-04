@@ -45,13 +45,15 @@ Don't use double quotes in your answer.  But it can span multiple lines."/>
 <t2:prompt prompt="What files provide for (are needed in order to use) the 'substring' tag?  See the substring tag in use below"
 answer="SubstrDescriptor.tld | SubstrTagHandler.java" heading="Java Tags" hint="look at the top of this file for the uri attribute, then look in that file for the tagclass."></t2:prompt>
 
-<t1:substring input="GOODMORNING" start="1" end="6"/> 
+<t1:substring input="GOODMORNING" start="0" end="11"/> 
 
-<t2:prompt prompt="What is the substring tag doing?" answer="" heading="Substring Tags" hint="play around with it and it's parameters, read the code."></t2:prompt>
+<t2:prompt prompt="What is the substring tag doing?" answer="the substring will output letters starting with the send letter 0 and 
+continue on through the 6th letter which is R, so all other letters are omitted -> so essentially OODMOR" heading="Substring Tags" hint="play around with it and it's parameters, read the code."></t2:prompt>
 
-<t2:prompt prompt="What files provide for the 'prompt' tag?" answer="" heading="JSP Tags" hint="look at the top of this file for the tagdir attribute."></t2:prompt>
+<t2:prompt prompt="What files provide for the 'prompt' tag?" answer="/WEB-INF/tags/prompt.tag" heading="JSP Tags" hint="look at the top of this file for the tagdir attribute."></t2:prompt>
 
-<t2:prompt prompt="What files provide for the 'c' tag? (see below)" answer="" heading="JAR Tags" hint="libraries"></t2:prompt>
+<t2:prompt prompt="What files provide for the 'c' tag? (see below)" answer="the above URI is used for tomcat to search thru the libraries to find the right library.  
+This is NOT a URL to go out on the web to get anything!). This keeps it more dynamic. It uses http://... to remain unique" heading="JAR Tags" hint="libraries"></t2:prompt>
 
 <c:out value="The 'core' library has a lot of useful functions, like conditionals and looping"></c:out>
 
@@ -73,13 +75,9 @@ Here is an example of looping:
 
 <p class="hint">Use prompt.tag as an example</p>
 
-
 <t2:greeter name="Anna" color="blue"/>
 
 <t2:greeter color="blue"/>
-
-<t2:greeter.tag 
-
 
 
 
